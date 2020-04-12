@@ -7,7 +7,7 @@
   "description": "Webpack loader to generate CSS Modules classname with Svelte",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=development webpack --watch --config example/webpack.config.js --progress --profile",
+    "dev": "NODE_ENV=development webpack-dev-server --config example/webpack.config.js --progress --profile",
     "build": "NODE_ENV=production webpack --config example/webpack.config.js --profile"
   },
   "license": "MIT",
@@ -26,7 +26,11 @@
     "svelte": "^3.6.8",
     "svelte-loader": "^2.13.6",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "peerDependencies": {
+    "svelte": ">1.44.0"
   },
   "files": [
     "index.js",
