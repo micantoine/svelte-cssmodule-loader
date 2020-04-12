@@ -5,6 +5,11 @@
     "name": "micantoine"
   },
   "description": "Webpack loader to generate CSS Modules classname with Svelte",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development webpack --watch --config example/webpack.config.js --progress --profile",
+    "build": "NODE_ENV=production webpack --config example/webpack.config.js --profile"
+  },
   "license": "MIT",
   "keywords": [
     "svelte",
@@ -18,8 +23,10 @@
     "schema-utils": "^1.0.0"
   },
   "devDependencies": {
+    "svelte": "^3.6.8",
     "svelte-loader": "^2.13.6",
-    "svelte": "^3.6.8"
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   },
   "files": [
     "index.js",
