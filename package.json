@@ -1,0 +1,28 @@
+{
+  "name": "svelte-cssmodules-loader",
+  "version": "1.0.0",
+  "author": {
+    "name": "micantoine"
+  },
+  "description": "Webpack loader to generate CSS Modules classname with Svelte",
+  "license": "MIT",
+  "keywords": [
+    "svelte",
+    "webpack",
+    "loader",
+    "css-modules"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "loader-utils": "^1.1.0",
+    "schema-utils": "^1.0.0"
+  },
+  "devDependencies": {
+    "svelte-loader": "^2.13.6",
+    "svelte": "^3.6.8"
+  },
+  "files": [
+    "index.js",
+    "schema.json"
+  ]
+}
