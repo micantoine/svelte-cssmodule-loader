@@ -1,6 +1,5 @@
 <script>
-  const date = new Date()
-  $: time = `${date.getHours()}:${date.getMinutes()}`
+  import Time from './Time.svelte'
 </script>
 
 <style>
@@ -73,7 +72,7 @@ button {
   <section>
     <header>My Modal title</header>
     <div class="$style.body">
-      <h4>{time}</h4>
+      <Time />
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat, deserunt.</p>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat, deserunt. Lorem ipsum dolor sit amet. </p>
     </div>
