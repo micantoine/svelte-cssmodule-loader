@@ -47,37 +47,38 @@ module.exports = function(source) {
     pluginOptions[option] = loaderOptions[option]
   }
 
-  if (regex.module.test(source)) {
-    const styles = source.match(regex.style)
-    let parsedStyles = null
-
-    let parsedSource = source.replace(regex.module, (match, className) => {
-      let replacement = ''
-
-      if (styles.length) {
-        const classRegex = new RegExp(`\\.(${className})\\b(?![-_])`, 'gm')
-        const toBeParsed = parsedStyles ? parsedStyles : styles[0]
-
-        if (classRegex.test(toBeParsed)) {
-          const interpolatedName = generateName(
-            loaderContext,
-            styles[0],
-            className
-          )
-          parsedStyles = toBeParsed.replace(
-            classRegex,
-            () => `.${interpolatedName}`
-          )
-          replacement = interpolatedName
-        }
-      }
-      return replacement
-    })
-
-    if (parsedStyles) {
-      parsedSource = parsedSource.replace(regex.style, parsedStyles)
-    }
-    return parsedSource
+  if (!regex.module.test(source)) {
+    return source
   }
-  return source
+
+  const styles = source.match(regex.style)
+  let parsedStyles = null
+
+  let parsedSource = source.replace(regex.module, (match, className) => {
+    let replacement = ''
+
+    if (styles.length) {
+      const classRegex = new RegExp(`\\.(${className})\\b(?![-_])`, 'gm')
+      const toBeParsed = parsedStyles ? parsedStyles : styles[0]
+
+      if (classRegex.test(toBeParsed)) {
+        const interpolatedName = generateName(
+          loaderContext,
+          styles[0],
+          className
+        )
+        parsedStyles = toBeParsed.replace(
+          classRegex,
+          () => `.${interpolatedName}`
+        )
+        replacement = interpolatedName
+      }
+    }
+    return replacement
+  })
+
+  if (parsedStyles) {
+    parsedSource = parsedSource.replace(regex.style, parsedStyles)
+  }
+  return parsedSource
 }

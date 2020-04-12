@@ -7,14 +7,15 @@
   const interval = setInterval(() => date = new Date(), 1000)
 
   onDestroy(() => {
-    clearInterval(interval);
+    clearInterval(interval)
   })
 </script>
 
 <style>
-  datetime {
+  div {
+    text-align: right;
     font-family: monospace;
   }
 </style>
 
-<datetime>{time}</datetime>
+<div class="$style.datetime">{time}</div>
