@@ -6,7 +6,7 @@
   },
   "description": "Webpack loader to generate CSS Modules classname with Svelte",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "NODE_ENV=development webpack-dev-server --config example/webpack.config.js --progress --profile",
     "build": "NODE_ENV=production webpack --config example/webpack.config.js --profile"
   },
@@ -23,6 +23,10 @@
     "schema-utils": "^1.0.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.9.5",
+    "babel-jest": "^25.3.0",
+    "html-loader": "^1.1.0",
+    "jest": "^25.3.0",
     "svelte": "^3.6.8",
     "svelte-loader": "^2.13.6",
     "webpack": "^4.42.1",
