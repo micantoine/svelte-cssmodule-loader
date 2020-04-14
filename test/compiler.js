@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import webpackFs from './lib/webpackFs.js'; 
 
 export default (fixture, options = {}) => {
   const compiler = webpack({
@@ -26,11 +27,17 @@ export default (fixture, options = {}) => {
     }
   });
 
+  compiler.outputFileSystem = webpackFs;
+  compiler.resolvers.context.fileSystem = webpackFs;
+
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
-      if (err) reject(err);
-      if (stats.hasErrors()) reject(new Error(stats.toJson().errors));
-
+      if (err) {
+        reject(err);
+      }
+      if (stats.hasErrors()) {
+        reject(new Error(stats.toJson().errors));
+      }
       resolve(stats);
     });
   });
