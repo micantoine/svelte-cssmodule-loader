@@ -4,7 +4,7 @@
   "author": {
     "name": "micantoine"
   },
-  "description": "Webpack loader to generate CSS Modules classname with Svelte",
+  "description": "Webpack loader to generate CSS Modules classname on Svelte components",
   "scripts": {
     "test": "jest",
     "dev": "NODE_ENV=development webpack-dev-server --config example/webpack.config.js --progress --profile",

@@ -1,6 +1,6 @@
 import compiler from './compiler.js';
 
-test('Generate CSS Modules from HTML attributes, Replace css className', async () => {
+test('Generate CSS Modules from HTML attributes, Replace CSS className', async () => {
   const stats = await compiler('replace', {
     localIdentName: '[local]-123456'
   });
@@ -44,8 +44,8 @@ test('Target proper className from lookalike classNames', async () => {
 
   expect(eval(output)).toBe(
 `<style>
-  .red-123 { color: red;}
-  .red-crimson-123 { color: crimson;}
+  .red-123 { color: red; }
+  .red-crimson-123 { color: crimson; }
   .redMajenta-123 { color: magenta; }
 </style>
 <span class="red-123">Red</span>
