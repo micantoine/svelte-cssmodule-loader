@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "localIdentName": {
+      "description": "Webpack interpolateName placeholder tokens",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,56 @@
+{
+  "name": "svelte-cssmodules-loader",
+  "version": "1.0.0",
+  "description": "Webpack loader to generate CSS Modules classname on Svelte components",
+  "keywords": [
+    "svelte",
+    "webpack",
+    "loader",
+    "css-modules"
+  ],
+  "homepage": "https://github.com/micantoine/svelte-cssmodules-loader",
+  "bugs": {
+    "url": "https://github.com/micantoine/svelte-cssmodules-loader/issues"
+  },
+  "author": {
+    "name": "micantoine"
+  },
+  "scripts": {
+    "test": "jest",
+    "dev": "NODE_ENV=development webpack-dev-server --config example/webpack.config.js --progress --profile",
+    "build": "NODE_ENV=production webpack --config example/webpack.config.js --profile"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/micantoine/svelte-cssmodules-loader.git"
+  },
+  "dependencies": {
+    "loader-utils": "^1.1.0",
+    "schema-utils": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.5",
+    "babel-jest": "^25.3.0",
+    "html-loader": "^1.1.0",
+    "jest": "^25.3.0",
+    "memfs": "^3.1.2",
+    "svelte": "^3.6.8",
+    "svelte-loader": "^2.13.6",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "peerDependencies": {
+    "svelte": ">1.44.0",
+    "svelte-loader": ">2.13.0"
+  },
+  "files": [
+    "index.js",
+    "schema.json"
+  ]
+}
